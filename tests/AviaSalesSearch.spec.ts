@@ -15,7 +15,6 @@ test('AviaSales Test', async ({ page }) => {
   await page.locator('[data-test-id="form-submit"]').click();
   const page1 = await page1Promise;       
   await expect(page1).toHaveURL(/search/);
-  // await expect(origin).toBe('John F. Kennedy International Airport');
   await expect(page1.locator('[data-test-id="origin-autocomplete-field"]')).toHaveValue('John F. Kennedy International Airport');
   await expect(page1.locator('input#destination')).toHaveValue('Berlin');
   await expect(page1.locator('[data-test-id="departure-date-input"]')).toHaveValue('Mon, October 30');
